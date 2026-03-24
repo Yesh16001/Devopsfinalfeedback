@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Yesh16001/Devopsfinalfeedback'
+                    ]]
+                ])
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'echo Building Feedback Project...'
+            }
+        }
+
+        stage('List Files') {
+            steps {
+                bat 'dir'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'echo Running Tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                bat 'echo Deploying Project...'
+            }
+        }
+    }
+}
