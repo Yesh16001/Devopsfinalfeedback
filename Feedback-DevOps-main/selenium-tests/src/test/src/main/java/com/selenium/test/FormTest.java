@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import java.io.File;
 import java.time.Duration;
 import java.nio.file.Path;
 
@@ -72,10 +71,9 @@ public class FormTest {
             }
             current = current.getParent();
         }
-        throw new IllegalStateException("Cannot find web/index.html from current directory");
+        throw new IllegalStateException("Cannot find web/index.html");
     }
 
-    // Helper Methods
     private String getAlertTextAndAccept() {
         Alert alert = driver.switchTo().alert();
         String text = alert.getText();
@@ -90,7 +88,7 @@ public class FormTest {
     }
 
     private void submitForm() {
-        driver.findElement(By.cssSelector("input[type='submit']")).click();
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
     }
 
     private void assertTest(String name, boolean condition, String actual) {
@@ -103,10 +101,9 @@ public class FormTest {
         }
     }
 
-    // Test Cases
     private void testPageTitle() {
         loadPage();
-        assertTest("TC01 Title", "Symbiosis Admission Form".equals(driver.getTitle()), driver.getTitle());
+        assertTest("TC01 Title", "Admission Form".equals(driver.getTitle()), driver.getTitle());
     }
 
     private void testEmptyName() {
