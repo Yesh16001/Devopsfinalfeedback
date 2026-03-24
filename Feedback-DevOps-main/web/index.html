@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admission Form</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+   
+    <script src="assets/js/validate.js" defer></script>
+</head>
+
+<body>
+
+<div class="container">
+    <form id="form">
+
+        <h2>🎓 Admission Form</h2>
+
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Mobile Number</label>
+            <input type="text" id="mobile" placeholder="Enter mobile number">
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" id="confirm" placeholder="Confirm password">
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Gender</label>
+            <div class="gender">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> Other</label>
+            </div>
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Course</label>
+            <select id="course">
+                <option value="">Select Course</option>
+                <option>B.Tech</option>
+                <option>BBA</option>
+                <option>BCA</option>
+                <option>MBA</option>
+            </select>
+            <small class="error"></small>
+        </div>
+
+        <div class="input-group">
+            <label>Feedback</label>
+            <textarea id="feedback" rows="3" placeholder="Write something..."></textarea>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="submit-btn">Register</button>
+            <button type="reset" class="reset-btn">Reset</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>
